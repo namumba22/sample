@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by dumin on 6/29/17.
  */
 
-
 @Configuration
-//@ComponentScan
 @EnableAutoConfiguration
 @RestController
 @RequestMapping("/")
