@@ -4,7 +4,6 @@
 # sample example
 
 
-
 Service | Type | test url
 --- |---|---
 Sample | ... | http://localhost:8080/
