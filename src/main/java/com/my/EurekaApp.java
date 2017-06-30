@@ -2,7 +2,10 @@ package com.my;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,15 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 @RestController
 @RequestMapping("/")
-public class SampleApp {
+@SpringBootApplication
+@EnableEurekaServer
+@PropertySource("classpath:eureka-server.properties")
+public class EurekaApp {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getStatus() {
-        return "Hallow";
+        return "Hallow eureka";
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SampleApp.class, args);
+        SpringApplication.run(EurekaApp.class, args);
     }
 
 }
