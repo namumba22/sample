@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Configuration
 @EnableAutoConfiguration
 @RestController
-@RequestMapping("/")
 @SpringBootApplication
 @EnableEurekaServer
 @PropertySource("classpath:eureka-server.properties")
 public class EurekaApp {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value ="/hallow", method = RequestMethod.GET)
     public String getStatus() {
         return "Hallow eureka";
     }
